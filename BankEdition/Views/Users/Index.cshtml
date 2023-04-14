@@ -1,0 +1,54 @@
+﻿@using Bank.Service.DTOs
+
+@model IEnumerable<UserForResultDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Users</h2>
+<div class="mt-10">
+    <a asp-controller="Users" asp-action="Create" class="btn btn-success">Registrate</a>
+</div>
+<div>
+  <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>DateOfBirth</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success warning">Edit</a> |
+                        <a class=" btn btn-info"
+                       href="@Url.Action("Details", "Users", new { id = item.Id })">Details</a>|
+                        <a class=" btn btn-danger" 
+                        href="@Url.Action("Delete", "Users", new { id = item.Id })">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

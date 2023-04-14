@@ -1,0 +1,37 @@
+﻿@using Bank.Service.DTOs
+@model UserForResultDto
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Users" asp-action="Update" method="put" asp-antiforgery="true" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Id">Id</label>
+        <input type="text" class="form-control" asp-for="Id">
+    </div>
+    <div class="form-group">
+        <label for="Nomi">FirstName</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+    </div>
+    <div class="form-group">
+        <label for="Price">LastName</label>
+        <input type="text" class="form-control" asp-for="LastName">
+    </div>
+    <div class="form-group">
+        <label for="Price">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+    </div>
+    <div class="form-group">
+        <label for="Count">Date Of Birth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div style="padding-top: 50px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div style="padding-top: 10px;">
+        <a asp-action="Index" class="btn btn-danger">Back</a>
+    </div>
+
+</form>
+
+

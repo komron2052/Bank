@@ -1,0 +1,40 @@
+﻿@using Bank.Domain.Entities
+
+@model User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+
+<div>
+	<form asp-controller="Users" asp-action="Create" method="post">
+		<div class="mb-3">
+			<label>Firstname</label>
+			<input type="text" class="form-control form-control-sm" asp-for="FirstName" />
+		</div>
+		<div class="mb-3">
+			<label>LastName</label>
+			<input type="text" class="form-control form-control-sm" asp-for="LastName" />
+		</div>
+		<div class="mb-3">
+			<label>Email</label>
+			<input type="text" class="form-control form-control-sm" asp-for="Email" />
+		</div>
+		<div class="mb-3">
+			<label>Password</label>
+			<input type="text" class="form-control form-control-sm" asp-for="Password" />
+		</div>
+		<div class="mb-3">
+			<label>Date Of Birth</label>
+			<input type="date" class="form-control form-control-sm" asp-for="DateOfBirth" />
+		</div>
+		<button type="submit" class="btn btn-success">Submit</button>
+		<a asp-action="Index" class="btn btn-danger">Back</a>
+	</form>
+</div>
+
